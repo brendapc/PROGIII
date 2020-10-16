@@ -27,7 +27,7 @@ app.post('/', (req, res)=>{
     })
 })
 
-app.get('/products', productsRoute)
+app.use('/products', productsRoute)
 
 
 module.exports = app
