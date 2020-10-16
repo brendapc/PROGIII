@@ -33,4 +33,12 @@ router.get('/:id', (req, res)=>{
         res.status(500).json(err)
     })
 })
+
+router.delete('/:id', (req, res)=>{
+    Products.findByIdAndDelete(req.params.id).then(result =>{
+        res.status(200).json(result)
+    }).catch((err)=>{
+        res.status(500).json(err)
+    })
+})
 module.exports = router
