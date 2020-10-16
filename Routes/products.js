@@ -33,7 +33,11 @@ router.get('/:id', (req, res)=>{
         res.status(500).json(err)
     })
 })
-
+router.patch('/:id', (req, res)=>{
+    Products.findByIdAndUpdate(req.params.id, {name: req.body.name, price: req.body.price }).then(result =>{
+        res.status(200).json(result)
+    })
+})
 router.delete('/:id', (req, res)=>{
     Products.findByIdAndDelete(req.params.id).then(result =>{
         res.status(200).json(result)
