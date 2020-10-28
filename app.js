@@ -8,9 +8,11 @@ const cors = require('cors')
 const productsRoute = require('./Routes/products')
 const ordersRoute = require('./Routes/orders')
  
+const db = require('./mysqlconnection')
+/* 
 mongoose.connect('mongodb://localhost:27017/restapi').then(()=> console.log('MongoDB connected!')).catch((err)=>{
     console.log(err)
-})
+}) */
 
 app.use(morgan('dev')) //Log de operações que chegam no servidor
 app.use(bodyParser.urlencoded({extended: false})) // Recebe body requests, false significa um body simples (simplificado)
